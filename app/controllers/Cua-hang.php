@@ -126,6 +126,7 @@ class Cuahang extends Control
                 "product_type" => $get->get_productType(),
             ]);
         } else {
+            
             unset($_SESSION['sos']);
             unset($_SESSION['type_sort']);
             $page = 1;
