@@ -1433,6 +1433,8 @@ ol {
 
 .filter__sort {
   margin-bottom: 15px;
+  width: 200px;
+  height: 30px;
 }
 
 .filter__sort span {
@@ -3505,4 +3507,45 @@ ol {
   padding-left: 14px;
   padding-right: 14px;
   cursor: pointer;
+}
+
+ul.sort > li {
+  list-style: none;
+  border: 1px solid #e5e5e5;
+  padding: 5px 20px 5px 20px;
+}
+
+ul.sort > li > a {
+  text-decoration: none;
+  color: black;
+  font-family: arial;
+}
+
+ul.sub_item > li {
+  list-style: none;
+  border: 1px solid #e5e5e5;
+  padding: 5px 15px 5px 15px;
+}
+ul.sub_item > li > a {
+  text-decoration: none;
+  color: black;
+  font-family: arial;
+}
+ul.sub_item {
+  position: absolute;
+  top: 37px;
+  left: 15px;
+  background-color: white;
+  width: 180px;
+  z-index: 1;
+  display: none;
+}
+ul.sort {
+  width: 200px;
+}
+ul.sort > li:hover ul.sub_item {
+  display: block;
+}
+ul.sub_item > li > a:hover {
+  color: #68a808;
 }

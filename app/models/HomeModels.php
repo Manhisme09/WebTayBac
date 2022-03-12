@@ -1,12 +1,24 @@
 <?php
 class HomeModels extends DB
 {
+    public function get_Product_Sort($offset, $numberPostPerPage, $sort)
+    {
+        $sql = "select * from products order by $sort limit $numberPostPerPage offset $offset";
+        return mysqli_query($this->con, $sql);
+    }
     public function get_Product($offset, $numberPostPerPage)
     {
         $sql = "select * from products limit $numberPostPerPage offset $offset";
         return mysqli_query($this->con, $sql);
     }
 
+    public function get_Product_byType_Sort($offset, $numberPostPerPage, $temp, $sort)
+    {
+
+        $sql = "select * from products INNER JOIN producttype ON products.productType_id=producttype.productType_id where productType_name = '$temp' order by $sort limit $numberPostPerPage offset $offset";
+
+        return mysqli_query($this->con, $sql);
+    }
     public function get_Product_byType($offset, $numberPostPerPage, $temp)
     {
 

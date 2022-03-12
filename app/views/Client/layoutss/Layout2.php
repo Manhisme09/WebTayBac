@@ -45,7 +45,27 @@
     <script src="<?php echo _WEB_ROOT; ?>/public/js/mixitup.min.js"></script>
     <script src="<?php echo _WEB_ROOT; ?>/public/js/owl.carousel.min.js"></script>
     <script src="<?php echo _WEB_ROOT; ?>/public/js/main.js"></script>
+    <!-- <script>
+        function addItem1() {
+            var input = document.getElementById("abc1").textContent;
+            document.getElementById('p').value = input;
+        }
 
+        function addItem2() {
+            var input = document.getElementById("abc2").textContent;
+            document.getElementById('p').value = input;
+        }
+
+        function addItem3() {
+            var input = document.getElementById("abc3").textContent;
+            document.getElementById('p').value = input;
+        }
+        $(document).ready(function() {
+            $('ul .sub_item li a').click(function() {
+                $("input").val($(this).text());
+            })
+        })
+    </script> -->
 
 
 </body>
