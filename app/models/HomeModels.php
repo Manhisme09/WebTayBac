@@ -109,7 +109,7 @@ class HomeModels extends DB
 
     public function get_new_blog()
     {
-        $sql = "select * from blogs where categorieBlog_id = '3' limit 3 ";
+        $sql = "SELECT * FROM blogs ORDER BY posted_at DESC limit 3 ";
         return mysqli_query($this->con, $sql);
     }
 
@@ -149,5 +149,16 @@ class HomeModels extends DB
     {
         $sql = "select * from products where product_id = '$key' ";
         return mysqli_fetch_array(mysqli_query($this->con, $sql), MYSQLI_ASSOC);
+    }
+
+    public function insert_customer($first_name, $last_name, $email, $password, $phone_number, $address)
+    {
+        $sql = "insert into customers(first_name,last_name,email,password,phone_number,address) values('$first_name','$last_name','$email','$password','$phone_number','$address')";
+        return mysqli_query($this->con, $sql);
+    }
+    public function get_customer($email, $password)
+    {
+        $sql = "select * from customers where email = '$email' and password = '$password'";
+        return mysqli_query($this->con, $sql);
     }
 }

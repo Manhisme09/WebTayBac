@@ -27,7 +27,7 @@
                         </div>
                         <div class="blog__sidebar__recent__item__text">
                             <h6><?php echo $each['blog_title'] ?></h6>
-                            <span>MAR 05, 2019</span>
+                            <span><?php echo date("M j,Y", strtotime((string)$each['posted_at'])) ?></span>
                         </div>
                     </a>
                 <?php endforeach ?>

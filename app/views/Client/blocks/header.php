@@ -38,7 +38,29 @@
                             </ul>
                         </div>
                         <div class="header__top__right__auth">
-                            <a href="#"><i class="fa fa-user"></i>Đăng nhập</a>
+                            <?php if (!isset($_SESSION['fullname'])) { ?>
+                                <ul class="login">
+                                    <li id="dn">
+                                        <a href="<?php echo _WEB_ROOT . "/member/login" ?>""><i class=" fa fa-user"></i> Đăng nhập </a>
+                                    </li>
+                                    <li id="gach"> | </li>
+                                    <li id="dk">
+                                        <a href="<?php echo _WEB_ROOT . "/member/register" ?>"><i class="fa fa-user"></i> Đăng ký </a>
+                                    </li>
+                                </ul>
+                            <?php } else { ?>
+                                <ul class="account">
+                                    <li id="coc_account">
+                                        <a><i class=" fa fa-user"></i> Xin chào, <?php echo $_SESSION['fullname'] ?> </a>
+
+                                        <ul class="sub_account">
+                                            <li><a href="">Thông tin</a></li>
+                                            <li><a href="<?php echo _WEB_ROOT . "/member/logout" ?>">Đăng xuất</a></li>
+                                        </ul>
+                                    </li>
+
+                                </ul>
+                            <?php } ?>
                         </div>
                     </div>
                 </div>

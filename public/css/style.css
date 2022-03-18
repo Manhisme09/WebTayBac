@@ -3549,3 +3549,48 @@ ul.sort > li:hover ul.sub_item {
 ul.sub_item > li > a:hover {
   color: #68a808;
 }
+
+ul.login {
+  display: flex;
+  justify-content: space-around;
+}
+ul.login > li {
+  list-style: none;
+}
+ul.login > #dn > a:hover {
+  text-decoration: underline;
+}
+ul.login > #dk > a:hover {
+  text-decoration: underline;
+}
+ul.login #gach {
+  margin: 0 10px 0 10px;
+}
+
+ul.account > li {
+  list-style: none;
+}
+
+ul.sub_account > li > a:hover {
+  color: #68a808;
+}
+ul.sub_account > li {
+  list-style: none;
+  text-align: center;
+  padding: 10px;
+}
+#coc_account {
+  position: relative;
+}
+ul.sub_account {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 150px;
+  background-color: #f5f5f5;
+  z-index: 1;
+  display: none;
+}
+ul.account > li:hover ul.sub_account {
+  display: block;
+}

@@ -155,7 +155,7 @@
                         </div>
                         <div class="blog__item__text">
                             <ul>
-                                <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
+                                <li><i class="fa fa-calendar-o"></i> <?php echo date("M j,Y", strtotime((string)$each['posted_at'])) ?></li>
                                 <li><i class="fa fa-comment-o"></i> 5</li>
                             </ul>
                             <h5><a href="<?php echo _WEB_ROOT . "/chi-tiet/blog/" . $each['blog_id'] ?>"><?php echo $each['blog_title'] ?></a></h5>
