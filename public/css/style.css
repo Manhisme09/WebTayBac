@@ -3594,3 +3594,122 @@ ul.sub_account {
 ul.account > li:hover ul.sub_account {
   display: block;
 }
+
+/* thanhtoan */
+
+.infor_form > label {
+  width: 100px;
+}
+
+.form1 {
+  background-color: #c9c7c7;
+  width: 100%;
+  height: auto;
+  text-align: left;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+.infor_form {
+  margin-top: 50px;
+}
+
+.infor_form > #btn {
+  width: 160px;
+  height: 46px;
+  border: none;
+  background: #fe4c50;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.infor_form > #inp {
+  width: 50%;
+  height: 35px;
+  background: #ffffff;
+  border: none;
+  font-size: 14px;
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+
+.infor_form > #note {
+  width: 50%;
+  border: none;
+  height: 75px;
+  font-size: 14px;
+  padding-left: 20px;
+  resize: both;
+}
+
+.order {
+  margin-top: 50px;
+}
+
+.order_item {
+  display: flex;
+  margin: 5px;
+  width: 85%;
+}
+
+.order_name {
+  margin: 0 10px 0 7px;
+  width: 55%;
+  color: #fe4c50;
+}
+
+.order_name > p {
+  color: black;
+}
+
+.order_price > p {
+  color: #fe4c50;
+}
+
+.total_price {
+  font-size: 25px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+.total_price > span {
+  color: #fe4c50;
+  margin-left: 150px;
+}
+
+.wrap_suggest {
+  position: absolute;
+  top: 10%;
+  width: 56%;
+  height: 77%;
+  z-index: 1;
+  background: #ffffff;
+  border: 1px solid #e6e6e6;
+  display: none;
+}
+ul.list_search > li {
+  list-style: none;
+  padding: 8px 0px 8px 13px;
+}
+ul.list_search > li > a {
+  display: flex;
+}
+ul.list_search > li:hover {
+  background-color: #3cc032;
+}
+.suggest_item > p {
+  margin: 0px 0px 0px 27px;
+}
+.wrap_suggest2 {
+  position: absolute;
+  top: 100%;
+  width: 56%;
+  z-index: 1;
+  background: #ffffff;
+  border: 1px solid #e6e6e6;
+  display: none;
+}

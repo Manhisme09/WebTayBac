@@ -4,8 +4,10 @@ class Cart extends Control
     public function index()
     {
         $product = !empty($_SESSION['cart_tb']) ? $_SESSION['cart_tb'] : null;
+        $get = $this->model("HomeModels");
         $this->view("Client/layoutss/Layout2", [
             "page" => "CartPage",
+            "product_type" => $get->get_productType(),
             "sp" => $product,
         ]);
     }

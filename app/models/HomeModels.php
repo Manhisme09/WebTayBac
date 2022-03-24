@@ -161,4 +161,45 @@ class HomeModels extends DB
         $sql = "select * from customers where email = '$email' and password = '$password'";
         return mysqli_query($this->con, $sql);
     }
+    public function get_inforCustomer($customer_id)
+    {
+        $sql = "select * from customers where id = '$customer_id'";
+        return mysqli_query($this->con, $sql);
+    }
+    public function insert_order($customer_id, $name_receiver, $phone_receiver, $address_receiver, $email_receiver, $status, $note_receiver, $total_price)
+    {
+        $sql = "insert into orders (customer_id, name_receiver, phone_receiver, address_receiver, email_receiver, status, note,total_price) 
+            values ('$customer_id', '$name_receiver', '$phone_receiver', '$address_receiver', '$email_receiver', '$status', '$note_receiver','$total_price')";
+        return mysqli_query($this->con, $sql);
+    }
+    public function get_order($customer_id)
+    {
+        $sql = "select max(order_id) from orders where customer_id = '$customer_id'";
+        return mysqli_query($this->con, $sql);
+    }
+    public function insert_orderProduct($order_id, $product_id, $quantity)
+    {
+        $sql = "insert into orders_product(order_id,product_id,quantity) values('$order_id','$product_id','$quantity')";
+        return mysqli_query($this->con, $sql);
+    }
+    public function get_count_search_product($search)
+    {
+        $sql = "select count(*) from products where product_name LIKE '%$search%'";
+        return mysqli_query($this->con, $sql);
+    }
+    public function get_search_product($search)
+    {
+        $sql = "select * from products where product_name LIKE '%$search%'";
+        return mysqli_query($this->con, $sql);
+    }
+    public function findProductAjax($search)
+    {
+        $sql = "select * from products where product_name LIKE '%$search%' limit 5 ";
+        return mysqli_query($this->con, $sql);
+    }
+    public function findNumProductAjax($search)
+    {
+        $sql = "select count(*) from products where product_name LIKE '%$search%'";
+        return mysqli_query($this->con, $sql);
+    }
 }

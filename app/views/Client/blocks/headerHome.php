@@ -147,15 +147,44 @@
             <div class="col-lg-9">
                 <div class="hero__search">
                     <div class="hero__search__form">
-                        <form action="#">
+
+                        <form action="<?php echo _WEB_ROOT . "/tim-kiem" ?>" method="POST">
                             <div class="hero__search__categories">
                                 Tất cả sản phẩm
                                 <span class="arrow_carrot-down"></span>
                             </div>
-                            <input type="text" placeholder="Bạn đang cần gì?">
-                            <button type="submit" class="site-btn">Tìm kiếm</button>
+                            <input type="text" name="search" id="search_name" placeholder="Bạn đang cần gì?">
+                            <button type="submit" name="submit" class="site-btn">Tìm kiếm</button>
                         </form>
+
                     </div>
+                    <div class="wrap_suggest" id="show_search">
+                        <!-- <ul class="list_search">
+                            <li>
+
+                                <a href="">
+                                    <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.timeoutdubai.com%2Fattraction%2Fimg-worlds-of-adventure&psig=AOvVaw1UiiE1HSRFIr5-7AJrd46S&ust=1648140117356000&source=images&cd=vfe&ved=0CAgQjRxqFwoTCOCr2MbW3PYCFQAAAAAdAAAAABAD" alt="" style="width:50px; height:50px">
+                                </a>
+
+                                <div class="suggest_item">
+                                    <p>Set Quà 02_Thịt Trâu Gác Bếp 05 & Chẳm Chéo & Hạt</p>
+                                    <p>850,000 VNĐ</p>
+                                </div>
+                            </li>
+                            <li>
+
+                                <a href="">
+                                    <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.timeoutdubai.com%2Fattraction%2Fimg-worlds-of-adventure&psig=AOvVaw1UiiE1HSRFIr5-7AJrd46S&ust=1648140117356000&source=images&cd=vfe&ved=0CAgQjRxqFwoTCOCr2MbW3PYCFQAAAAAdAAAAABAD" alt="" style="width:50px; height:50px">
+                                </a>
+
+                                <div class="suggest_item">
+                                    <p>Set Quà 02_Thịt Trâu Gác Bếp 05 & Chẳm Chéo & Hạt</p>
+                                    <p>850,000 VNĐ</p>
+                                </div>
+                            </li>
+                        </ul>  -->
+                    </div>
+
                     <div class="hero__search__phone">
                         <div class="hero__search__phone__icon">
                             <i class="fa fa-phone"></i>

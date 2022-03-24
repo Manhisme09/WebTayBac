@@ -127,6 +127,7 @@
                                 <div><span class="arrow_carrot-down"></span></div>
                             </div>
                             <ul class="sub_item">
+                                <!-- <li><a href="">Mặc định</a></li> -->
                                 <li><a href="?sort=name-asc">Sắp xếp theo tên</a></li>
                                 <li><a href="?sort=price-asc">Giá từ thấp đến cao</a></li>
                                 <li><a href="?sort=price-desc">Giá từ cao đến thấp</a></li>
@@ -164,22 +165,24 @@
 
 
     </div>
-    <div class="product__pagination">
-        <?php for ($i = 1; $i <= $data['numberPagePro']; $i++) : ?>
-            <?php if (isset($data['nameType'])) { ?>
-                <a href="<?php if (isset($_SESSION['sos'])) {
-                                echo _WEB_ROOT . "/cua-hang/danh-muc/" . $data['nameType'] . "?sort=" . $_SESSION['sos'] . "&page=" . $i;
-                            } else {
-                                echo _WEB_ROOT . "/cua-hang/danh-muc/" . $data['nameType'] . "?page=" . $i;
-                            } ?>"><?php echo $i ?></a>
-            <?php } else { ?>
-                <a href="<?php if (isset($_SESSION['sos'])) {
-                                echo _WEB_ROOT . "/cua-hang?sort=" . $_SESSION['sos'] . "&page=" . $i;
-                            } else {
-                                echo _WEB_ROOT . "/cua-hang?page=" . $i;
-                            } ?>"><?php echo $i ?></a>
-            <?php } ?>
-        <?php endfor ?>
-        <!-- <a href="#"><i class="fa fa-long-arrow-right"></i></a> -->
-    </div>
+    <?php if (isset($data['numberPagePro'])) { ?>
+        <div class="product__pagination">
+            <?php for ($i = 1; $i <= $data['numberPagePro']; $i++) : ?>
+                <?php if (isset($data['nameType'])) { ?>
+                    <a href="<?php if (isset($_SESSION['sos'])) {
+                                    echo _WEB_ROOT . "/cua-hang/danh-muc/" . $data['nameType'] . "?sort=" . $_SESSION['sos'] . "&page=" . $i;
+                                } else {
+                                    echo _WEB_ROOT . "/cua-hang/danh-muc/" . $data['nameType'] . "?page=" . $i;
+                                } ?>"><?php echo $i ?></a>
+                <?php } else { ?>
+                    <a href="<?php if (isset($_SESSION['sos'])) {
+                                    echo _WEB_ROOT . "/cua-hang?sort=" . $_SESSION['sos'] . "&page=" . $i;
+                                } else {
+                                    echo _WEB_ROOT . "/cua-hang?page=" . $i;
+                                } ?>"><?php echo $i ?></a>
+                <?php } ?>
+            <?php endfor ?>
+            <!-- <a href="#"><i class="fa fa-long-arrow-right"></i></a> -->
+        </div>
+    <?php } ?>
 </div>

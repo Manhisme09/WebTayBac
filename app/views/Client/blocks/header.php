@@ -147,14 +147,18 @@
             <div class="col-lg-9">
                 <div class="hero__search">
                     <div class="hero__search__form">
-                        <form action="#">
+                        <form action="<?php echo _WEB_ROOT . "/tim-kiem" ?>" method="POST">
                             <div class="hero__search__categories">
                                 Tất cả sản phẩm
                                 <span class="arrow_carrot-down"></span>
                             </div>
-                            <input type="text" placeholder="Bạn đang cần gì?">
-                            <button type="submit" class="site-btn">Tìm kiếm</button>
+                            <input type="text" name="search" value="<?php if (isset($data['Kword'])) {
+                                                                        echo $data['Kword'];
+                                                                    } ?>" id="search_name" placeholder="Bạn đang cần gì?">
+                            <button type="submit" name="submit" class="site-btn">Tìm kiếm</button>
                         </form>
+                    </div>
+                    <div class="wrap_suggest2" id="show_search">
                     </div>
                     <div class="hero__search__phone">
                         <div class="hero__search__phone__icon">

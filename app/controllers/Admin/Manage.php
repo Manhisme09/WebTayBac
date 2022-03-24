@@ -1,6 +1,29 @@
 <?php
 class Manage extends Control
 {
+    public function orders($temp = [])
+    {
+        if (empty($temp)) {
+            $get = $this->model("Admin/AccountModel");
+            $this->view("Admin/layoutss/mainLayout", [
+                "page" => "OrdersPage",
+                "order" => $get->get_order(),
+            ]);
+        } else if ($temp == "detail") {
+            $key = $_GET['key'];
+            $get = $this->model("Admin/AccountModel");
+            $this->view("Admin/layoutss/mainLayout", [
+                "page" => "OrdersDetail",
+                "order_detail" => $get->get_orderDetail($key),
+            ]);
+        } else if ($temp == "delete") {
+            $key = $_GET['key'];
+            $get = $this->model("Admin/AccountModel");
+            $get->delete_orders($key);
+
+            header('Location:' . _WEB_ROOT . "/Admin/Manage/orders");
+        }
+    }
 
     public function product($temp = [])
     {

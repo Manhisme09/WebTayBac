@@ -45,7 +45,26 @@
     <script src="<?php echo _WEB_ROOT; ?>/public/js/mixitup.min.js"></script>
     <script src="<?php echo _WEB_ROOT; ?>/public/js/owl.carousel.min.js"></script>
     <script src="<?php echo _WEB_ROOT; ?>/public/js/main.js"></script>
-
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#search_name').keyup(function() {
+                var search = $('#search_name').val()
+                if (search != '') {
+                    $.ajax({
+                        url: "<?= _WEB_ROOT ?>/tim-kiem/search",
+                        type: "POST",
+                        data: {
+                            search: search
+                        },
+                        success: function(data) {
+                            $('#show_search').html(data)
+                            $('#show_search').css('display', 'block')
+                        }
+                    })
+                }
+            })
+        })
+    </script>
 
 
 </body>
