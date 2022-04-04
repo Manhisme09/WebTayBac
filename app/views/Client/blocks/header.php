@@ -81,8 +81,8 @@
                         <li><a href="<?php echo _WEB_ROOT . "/cua-hang" ?>">Cửa hàng</a></li>
                         <li><a href="#">Trang</a>
                             <ul class="header__menu__dropdown">
-                                <li><a href="./shoping-cart.html">Giỏ hàng</a></li>
-                                <li><a href="./checkout.html">Thanh toán</a></li>
+                                <li><a href="<?php echo _WEB_ROOT . "/cart" ?>">Giỏ hàng</a></li>
+                                <li><a href="<?php echo _WEB_ROOT . "/checkout" ?>">Thanh toán</a></li>
                             </ul>
                         </li>
                         <li><a href="<?php echo _WEB_ROOT . "/Blog" ?>">Blog</a></li>

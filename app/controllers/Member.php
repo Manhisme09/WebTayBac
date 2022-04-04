@@ -4,6 +4,7 @@ class Member extends Control
     public function register()
     {
 
+        $get = $this->model("HomeModels");
         if (isset($_POST['submit'])) {
             $first_name = $_POST['first_name'];
             $last_name = $_POST['last_name'];
@@ -16,7 +17,7 @@ class Member extends Control
                 header('Location:' . _WEB_ROOT . "/member/register");
                 exit();
             } else {
-                $get = $this->model("HomeModels");
+
                 $get->insert_customer($first_name, $last_name, $email, $password, $phone_number, $address);
                 header('Location:' . _WEB_ROOT . "/member/login");
             }
@@ -25,17 +26,19 @@ class Member extends Control
 
         $this->view("Client/layoutss/Layout2", [
             "page" => "Register",
+            "product_type" => $get->get_productType(),
         ]);
     }
 
     public function login()
     {
+        $get = $this->model("HomeModels");
 
         if (isset($_POST['submit'])) {
             $password = $_POST['password'];
             $email = $_POST['email'];
 
-            $get = $this->model("HomeModels");
+
             $resuilt = $get->get_customer($email, $password);
             $number_row = mysqli_num_rows($resuilt);
 
@@ -54,6 +57,7 @@ class Member extends Control
 
         $this->view("Client/layoutss/Layout2", [
             "page" => "Login",
+            "product_type" => $get->get_productType(),
         ]);
     }
     public function logout()

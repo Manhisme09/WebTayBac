@@ -74,10 +74,10 @@ class App
                 $this->controller = new $this->controller;
                 unset($urlArr[0]);
             } else {
-                echo "loi";
+                require_once("./app/errors/404.php");
             }
         } else {
-            echo "loi";
+            require_once("./app/errors/404.php");
         }
 
 
@@ -97,7 +97,7 @@ class App
         if (method_exists($this->controller, $this->action)) {
             call_user_func_array(array($this->controller, $this->action), $this->param);
         } else {
-            echo "loi";
+            require_once("./app/errors/404.php");
         }
     }
 }

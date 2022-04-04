@@ -20,8 +20,8 @@
             <td><?php echo $prod['blog_title'] ?></td>
             <td><img width="100" src="<?php echo _WEB_ROOT . $prod['image'] ?>" alt=""></td>
             <td><?php echo $prod['categorieBlog_id'] ?></td>
-            <td><a href="<?php echo _WEB_ROOT . "/Admin/Manage/product/update?key=" . $prod['product_id'] ?>">Sửa</a></td>
-            <td><a href="<?php echo _WEB_ROOT . "/Admin/Manage/product/delete?key=" . $prod['product_id'] ?>">Xóa</a></td>
+            <td><a href="<?php echo _WEB_ROOT . "/Admin/Manage/blogs/update?key=" . $prod['blog_id'] ?>">Sửa</a></td>
+            <td><a href="<?php echo _WEB_ROOT . "/Admin/Manage/blogs/delete?key=" . $prod['blog_id'] ?>">Xóa</a></td>
         </tr>
     <?php
     }

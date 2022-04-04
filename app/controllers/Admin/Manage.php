@@ -114,6 +114,22 @@ class Manage extends Control
                 "page" => "ProductType",
                 "type" => $get->get_productType(),
             ]);
+        } else if ($temp == "insert") {
+            $get = $this->model("Admin/BlogModel");
+            if (isset($_POST['submit'])) {
+                $productType_name = $_POST['productType_name'];
+                $get->insert_productType($productType_name);
+                header('Location:' . _WEB_ROOT . "/Admin/Manage/productType");
+            }
+            $this->view("Admin/layoutss/mainLayout", [
+                "page" => "InsertProType",
+            ]);
+        } else if ($temp == "delete") {
+            $key = $_GET['key'];
+            $get = $this->model("Admin/BlogModel");
+            $get->delete_productType($key);
+
+            header('Location:' . _WEB_ROOT . "/Admin/Manage/productType");
         }
     }
     public function blogs($temp = [])
@@ -131,6 +147,7 @@ class Manage extends Control
                 $blog_title = $_POST['blog_title'];
                 $blog_content = $_POST['blog_content'];
                 $categorieBlog_id = $_POST['categorieBlog_id'];
+
                 $fileUpLoad = $_FILES['file-upload'];
                 $from = $fileUpLoad['tmp_name'];
 
@@ -150,6 +167,46 @@ class Manage extends Control
                 "page" => "InsertBlog",
                 "cata_blog" => $get->get_categorie_blog(),
             ]);
+        } else if ($temp == "update") {
+            $key = $_GET['key'];
+            $get_blogID = $this->model("Admin/BlogModel");
+            $get = $this->model("Admin/ProductModel");
+            if (isset($_POST['submit'])) {
+                $blog_id = $_POST['blog_id'];
+                $blog_title = $_POST['blog_title'];
+                $blog_content = $_POST['blog_content'];
+                $categorieBlog_id = $_POST['categorieBlog_id'];
+
+                $fileUpLoad = $_FILES['image_new'];
+                if ($fileUpLoad['name'] != null) {
+                    $from = $fileUpLoad['tmp_name'];
+                    $path_file = "./public/img/blog/" . $fileUpLoad['name'];
+                    move_uploaded_file($from, $path_file);
+                    $path_file = '/public/img/blog/' . $fileUpLoad['name'];
+                } else {
+                    $path_file = $_POST['image_old'];
+                }
+
+
+
+
+                $get_blogID->update_blog($blog_id, $blog_title, $blog_content, $path_file, $categorieBlog_id);
+
+                header('Location:' . _WEB_ROOT . "/Admin/Manage/blogs");
+            }
+
+            $this->view("Admin/layoutss/mainLayout", [
+                "page" => "UpdateBlog",
+                "blog" => $get_blogID->get_blogID($key),
+                "pro_Type" => $get->get_productType(),
+                "cata_blog" => $get_blogID->get_categorie_blog(),
+            ]);
+        } else if ($temp == "delete") {
+            $key = $_GET['key'];
+            $get = $this->model("Admin/BlogModel");
+            $get->delete_blog($key);
+
+            header('Location:' . _WEB_ROOT . "/Admin/Manage/blogs");
         }
     }
 }
