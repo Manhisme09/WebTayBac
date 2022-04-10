@@ -2,7 +2,7 @@
     <div style="width:50%;">
         <?php foreach ($data['inforCustomer'] as $each) : ?>
             <form class="infor_form" action="" method="post">
-                <h3 style="color: #fe4c50; margin-bottom:15px;">Thông tin mua hàng</h3>
+                <h3 style="font-weight: bold; color: black; margin-bottom:15px;">Thông tin mua hàng</h3>
                 <label for="">Email</label>
                 <input id="inp" type="text" name="email_receiver" value="<?php echo $each['email'] ?>" placeholder="Email">
                 <br>
@@ -25,12 +25,12 @@
     </div>
     <?php if (!empty($_SESSION['cart_tb'])) { ?>
         <div class="order">
-            <h3>Đơn hàng( <?php $t = 0;
-                            foreach ($cart as $key => $value) {
-                                $t += $value['quantity'];
-                            }
-                            echo $t;
-                            ?> sản phẩm)</h3>
+            <h3 style="font-weight: bold;">Đơn hàng( <?php $t = 0;
+                                                        foreach ($cart as $key => $value) {
+                                                            $t += $value['quantity'];
+                                                        }
+                                                        echo $t;
+                                                        ?> sản phẩm)</h3>
             <?php foreach ($cart as $key => $value) { ?>
                 <div class="order_item">
                     <div><img src="<?php echo _WEB_ROOT . $value['image'] ?>" width="50px" height="50px" alt=""></div>
@@ -44,13 +44,13 @@
                     </div>
                 </div>
             <?php } ?>
-            <div class="total_price">Tổng tiền: <span><?php
-                                                        $total_price = 0;
-                                                        foreach ($cart as $value) {
-                                                            $total_price += $value['price'] * $value['quantity'];
-                                                        }
-                                                        echo number_format($total_price) . " VNĐ";
-                                                        ?></div></span>
+            <div style="font-weight: bold;" class="total_price">Tổng tiền: <span><?php
+                                                                                    $total_price = 0;
+                                                                                    foreach ($cart as $value) {
+                                                                                        $total_price += $value['price'] * $value['quantity'];
+                                                                                    }
+                                                                                    echo number_format($total_price) . " VNĐ";
+                                                                                    ?></div></span>
         </div>
     <?php }  ?>
 </div>

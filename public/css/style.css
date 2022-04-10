@@ -3602,7 +3602,7 @@ ul.account > li:hover ul.sub_account {
 }
 
 .form1 {
-  background-color: #c9c7c7;
+  background-color: white;
   width: 100%;
   height: auto;
   text-align: left;
@@ -3619,7 +3619,7 @@ ul.account > li:hover ul.sub_account {
   width: 160px;
   height: 46px;
   border: none;
-  background: #fe4c50;
+  background: #68a808;
   color: #ffffff;
   font-size: 14px;
   font-weight: 500;
@@ -3632,7 +3632,7 @@ ul.account > li:hover ul.sub_account {
   width: 50%;
   height: 35px;
   background: #ffffff;
-  border: none;
+  border: 1px solid #5a5858;
   font-size: 14px;
   padding-left: 20px;
   margin-bottom: 10px;
@@ -3645,6 +3645,7 @@ ul.account > li:hover ul.sub_account {
   font-size: 14px;
   padding-left: 20px;
   resize: both;
+  border: 1px solid #5a5858;
 }
 
 .order {
@@ -3668,7 +3669,7 @@ ul.account > li:hover ul.sub_account {
 }
 
 .order_price > p {
-  color: #fe4c50;
+  color: red;
 }
 
 .total_price {
@@ -3677,7 +3678,7 @@ ul.account > li:hover ul.sub_account {
 }
 
 .total_price > span {
-  color: #fe4c50;
+  color: red;
   margin-left: 150px;
 }
 
