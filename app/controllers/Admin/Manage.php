@@ -130,6 +130,23 @@ class Manage extends Control
             $get->delete_productType($key);
 
             header('Location:' . _WEB_ROOT . "/Admin/Manage/productType");
+        } else if ($temp == "update") {
+            $key = $_GET['key'];
+            $get = $this->model("Admin/ProductModel");
+            if (isset($_POST['submit'])) {
+                $productType_id = $_POST['productType_id'];
+                $productType_name = $_POST['productType_name'];
+                
+                $get->update_productType($productType_id, $productType_name);
+
+                header('Location:' . _WEB_ROOT . "/Admin/Manage/productType");
+            }
+
+            $this->view("Admin/layoutss/mainLayout", [
+                "page" => "UpdateProductType",
+                "productTypeID" => $get->get_productTypeID($key),
+
+            ]);
         }
     }
     public function blogs($temp = [])
@@ -158,9 +175,6 @@ class Manage extends Control
 
 
                 $get->insert_blog($blog_title, $blog_content, $path_file, $categorieBlog_id);
-
-
-
                 header('Location:' . _WEB_ROOT . "/Admin/Manage/blogs");
             }
             $this->view("Admin/layoutss/mainLayout", [
@@ -186,9 +200,6 @@ class Manage extends Control
                 } else {
                     $path_file = $_POST['image_old'];
                 }
-
-
-
 
                 $get_blogID->update_blog($blog_id, $blog_title, $blog_content, $path_file, $categorieBlog_id);
 

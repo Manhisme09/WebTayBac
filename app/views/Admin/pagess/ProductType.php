@@ -8,6 +8,7 @@
     <tr>
         <th>Mã loại</th>
         <th>Tên loại sản phẩm</th>
+        <th>Sửa</th>
         <th>Xóa</th>
 
     </tr>
@@ -16,6 +17,7 @@
         <tr>
             <td><?php echo $prod['productType_id'] ?></td>
             <td><?php echo $prod['productType_name'] ?></td>
+            <td><a href="<?php echo _WEB_ROOT . "/Admin/Manage/productType/update?key=" . $prod['productType_id'] ?>">Sửa</a></td>
             <td><a href="<?php echo _WEB_ROOT . "/Admin/Manage/productType/delete?key=" . $prod['productType_id'] ?>">Xóa</a></td>
         </tr>
     <?php

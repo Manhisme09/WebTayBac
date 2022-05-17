@@ -40,7 +40,7 @@
                                 </div>
                             </div>
                             <input type="hidden" name="product_id" value="<?php echo $each['product_id'] ?>">
-                            <input class="primary-btn" type="submit" name="submit" value="ADD TO CARD">
+                            <input class="primary-btn" type="submit" name="submit" value="Thêm vào giỏ hàng">
                             <!-- <a href="#" class="primary-btn">ADD TO CARD</a> -->
                         </form>
                         <a href="#" class="heart-icon"><span class="icon_heart_alt"></span></a>

@@ -131,7 +131,7 @@ $sum = 0;
                                             ?>
                                         </td>
                                         <td class="shoping__cart__item__close">
-                                            <span class="plus"><a style="color: black;" href="<?php echo _WEB_ROOT . "/Cart/delete?id=" . $key ?>"><i class="fa-solid fa-xmark"></i></a></span>
+                                            <span class="plus"><a style="color: black;" onclick="return confirm('Are you sure you want to delete this item?');" href="<?php echo _WEB_ROOT . "/Cart/delete?id=" . $key ?>"><i class="fa-solid fa-xmark"></i></a></span>
 
                                         </td>
                                     </tr>

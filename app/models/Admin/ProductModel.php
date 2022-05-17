@@ -12,9 +12,15 @@ class ProductModel extends DB
         return mysqli_query($this->con, $sql);
     }
 
+    public function get_productTypeID($key)
+    {
+        $sql = "select * from producttype where productType_id = '$key'";
+        return mysqli_query($this->con, $sql);
+    }
+
     public function insert_product($product_name, $path_file, $price, $description, $productType_id, $availability, $information)
     {
-        $sql = "insert into products(product_name,image,price,description,productType_id,availability) values('$product_name','$path_file','$price','$description','$productType_id','$availability','$information')";
+        $sql = "insert into products(product_name,image,price,description,productType_id,availability,information) values('$product_name','$path_file','$price','$description','$productType_id','$availability','$information')";
         return mysqli_query($this->con, $sql);
     }
 
@@ -36,6 +42,15 @@ class ProductModel extends DB
         availability = '$availability',
         information = '$information'
         where product_id = '$product_id' ";
+        return mysqli_query($this->con, $sql);
+    }
+
+    public function update_productType($productType_id, $productType_name)
+    {
+        $sql = "update producttype
+        set
+        productType_name = '$productType_name'
+        where productType_id = '$productType_id'";
         return mysqli_query($this->con, $sql);
     }
 
