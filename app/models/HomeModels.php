@@ -202,4 +202,16 @@ class HomeModels extends DB
         $sql = "select count(*) from products where product_name LIKE '%$search%'";
         return mysqli_query($this->con, $sql);
     }
+    public function update_customer($id, $first_name, $last_name, $email, $phone_number, $address)
+    {
+        $sql = "update customers
+        set
+        first_name = '$first_name',
+        last_name = '$last_name',
+        email = '$email',
+        phone_number = '$phone_number',
+        address = '$address'
+        where id = '$id' ";
+        return mysqli_query($this->con, $sql);
+    }
 }

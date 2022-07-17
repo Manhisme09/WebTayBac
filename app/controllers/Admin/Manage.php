@@ -22,6 +22,20 @@ class Manage extends Control
             $get->delete_orders($key);
 
             header('Location:' . _WEB_ROOT . "/Admin/Manage/orders");
+        } else if ($temp == "accept") {
+            $key = $_GET['key'];
+            $status = 1;
+            $get = $this->model("Admin/AccountModel");
+            $get->update_orders($key, $status);
+
+            header('Location:' . _WEB_ROOT . "/Admin/Manage/orders");
+        } else if ($temp == "cancel") {
+            $key = $_GET['key'];
+            $status = 2;
+            $get = $this->model("Admin/AccountModel");
+            $get->update_orders($key, $status);
+
+            header('Location:' . _WEB_ROOT . "/Admin/Manage/orders");
         }
     }
 
@@ -136,7 +150,7 @@ class Manage extends Control
             if (isset($_POST['submit'])) {
                 $productType_id = $_POST['productType_id'];
                 $productType_name = $_POST['productType_name'];
-                
+
                 $get->update_productType($productType_id, $productType_name);
 
                 header('Location:' . _WEB_ROOT . "/Admin/Manage/productType");

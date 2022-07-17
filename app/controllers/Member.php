@@ -67,4 +67,34 @@ class Member extends Control
 
         header('Location:' . _WEB_ROOT);
     }
+
+    public function profile()
+    {
+        $id = $_SESSION['id'];
+        $get = $this->model("HomeModels");
+
+        if (isset($_POST['submit'])) {
+            $first_name = $_POST['first_name'];
+            $last_name = $_POST['last_name'];
+            $phone_number = $_POST['phone_number'];
+            $email = $_POST['email'];
+            $address = $_POST['address'];
+
+            $get->update_customer($id, $first_name, $last_name, $email, $phone_number, $address);
+            $resuilt = $get->get_inforCustomer($id);
+            $number_row = mysqli_num_rows($resuilt);
+
+            if ($number_row == 1) {
+                $each = mysqli_fetch_array($resuilt);
+                $_SESSION['fullname'] =  $each['first_name'] . " " . $each['last_name'];
+            }
+            echo '<script>alert("Cập nhập thông tin thành công")</script>';
+        }
+
+        $this->view("Client/layoutss/Layout2", [
+            "page" => "Profile",
+            "old_infor" => $get->get_inforCustomer($id),
+            "product_type" => $get->get_productType(),
+        ]);
+    }
 }

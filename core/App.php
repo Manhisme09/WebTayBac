@@ -6,7 +6,7 @@ class App
     private $param;
     function __construct()
     {
-        $this->controller = "trang-chu";
+        $this->controller = "Trang-chu";
         $this->action = "index";
         $this->param = [];
         $this->handleUrl();
@@ -29,7 +29,6 @@ class App
         // echo '<pre>';
         // print_r($urlArr);
         // echo '</pre>';
-
         $urlCheck = $this->controller;
         if (!empty($urlArr)) {
             $urlCheck = '';
@@ -39,7 +38,7 @@ class App
 
                 if (!empty($urlArr[$key - 1])) {
                     unset($urlArr[$key - 1]);
-                    //die($urlArr[$key - 1]);
+                    die($urlArr[$key - 1]);
                 }
 
                 if (file_exists("./app/controllers/" . $fileCheck . ".php")) {

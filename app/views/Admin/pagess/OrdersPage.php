@@ -11,6 +11,8 @@
         <th>Tổng tiền</th>
         <th>Xem</th>
         <th>Xóa</th>
+        <th>Duyệt</th>
+        <th>Hủy</th>
     </tr>
     <?php
     foreach ($data["order"] as $key => $each) { ?>
@@ -41,6 +43,19 @@
             <td><?php echo number_format($each['total_price']) . " VNĐ" ?></td>
             <td><a href="<?php echo _WEB_ROOT . "/Admin/Manage/orders/detail?key=" . $each['order_id'] ?>">Xem</a></td>
             <td><a href="<?php echo _WEB_ROOT . "/Admin/Manage/orders/delete?key=" . $each['order_id'] ?>">Xóa</a></td>
+            <?php
+            if ($each['status'] != 1 && $each['status'] != 2) { ?>
+                <td><a href="<?php echo _WEB_ROOT . "/Admin/Manage/orders/accept?key=" . $each['order_id'] ?>">Duyệt</a></td>
+            <?php
+            }
+            ?>
+            <?php
+            if ($each['status'] != 1 && $each['status'] != 2) { ?>
+                <td><a href="<?php echo _WEB_ROOT . "/Admin/Manage/orders/cancel?key=" . $each['order_id'] ?>">Hủy</a></td>
+            <?php
+            }
+            ?>
+
         </tr>
     <?php
     }

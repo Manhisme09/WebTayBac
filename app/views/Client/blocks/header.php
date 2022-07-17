@@ -54,7 +54,7 @@
                                         <a><i class=" fa fa-user"></i> Xin chào, <?php echo $_SESSION['fullname'] ?> </a>
 
                                         <ul class="sub_account">
-                                            <li><a href="">Thông tin</a></li>
+                                            <li><a href="<?php echo _WEB_ROOT . "/member/profile" ?>">Thông tin</a></li>
                                             <li><a href="<?php echo _WEB_ROOT . "/member/logout" ?>">Đăng xuất</a></li>
                                         </ul>
                                     </li>

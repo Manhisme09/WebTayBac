@@ -23,4 +23,12 @@ class AccountModel extends DB
         $sql = "delete from orders where order_id = '$key' ";
         return mysqli_query($this->con, $sql);
     }
+    public function update_orders($key, $status)
+    {
+        $sql = "update orders
+        set
+        status = $status
+        where order_id = '$key' ";
+        return mysqli_query($this->con, $sql);
+    }
 }
