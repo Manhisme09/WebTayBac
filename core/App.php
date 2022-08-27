@@ -38,7 +38,6 @@ class App
 
                 if (!empty($urlArr[$key - 1])) {
                     unset($urlArr[$key - 1]);
-                    die($urlArr[$key - 1]);
                 }
 
                 if (file_exists("./app/controllers/" . $fileCheck . ".php")) {
