@@ -19,3 +19,4 @@ define('_WEB_ROOT', $web_root);
 require_once "./core/App.php";
 require_once "./core/Control.php";
 require_once "./core/DBconfig.php";
+// tuan132
