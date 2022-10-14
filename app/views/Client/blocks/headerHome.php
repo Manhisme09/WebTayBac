@@ -159,30 +159,6 @@
 
                     </div>
                     <div class="wrap_suggest" id="show_search">
-                        <!-- <ul class="list_search">
-                            <li>
-
-                                <a href="">
-                                    <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.timeoutdubai.com%2Fattraction%2Fimg-worlds-of-adventure&psig=AOvVaw1UiiE1HSRFIr5-7AJrd46S&ust=1648140117356000&source=images&cd=vfe&ved=0CAgQjRxqFwoTCOCr2MbW3PYCFQAAAAAdAAAAABAD" alt="" style="width:50px; height:50px">
-                                </a>
-
-                                <div class="suggest_item">
-                                    <p>Set Quà 02_Thịt Trâu Gác Bếp 05 & Chẳm Chéo & Hạt</p>
-                                    <p>850,000 VNĐ</p>
-                                </div>
-                            </li>
-                            <li>
-
-                                <a href="">
-                                    <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.timeoutdubai.com%2Fattraction%2Fimg-worlds-of-adventure&psig=AOvVaw1UiiE1HSRFIr5-7AJrd46S&ust=1648140117356000&source=images&cd=vfe&ved=0CAgQjRxqFwoTCOCr2MbW3PYCFQAAAAAdAAAAABAD" alt="" style="width:50px; height:50px">
-                                </a>
-
-                                <div class="suggest_item">
-                                    <p>Set Quà 02_Thịt Trâu Gác Bếp 05 & Chẳm Chéo & Hạt</p>
-                                    <p>850,000 VNĐ</p>
-                                </div>
-                            </li>
-                        </ul>  -->
                     </div>
 
                     <div class="hero__search__phone">

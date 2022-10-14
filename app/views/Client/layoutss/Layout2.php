@@ -47,6 +47,7 @@
     <script src="<?php echo _WEB_ROOT; ?>/public/js/main.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
+            $('#show_search').hide();
             $('#search_name').keyup(function() {
                 var search = $('#search_name').val()
                 if (search != '') {
@@ -61,6 +62,9 @@
                             $('#show_search').css('display', 'block')
                         }
                     })
+                }else {
+                    $('#show_search').hide();
+                    $('#show_search').html('');
                 }
             })
         })
